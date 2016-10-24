@@ -26,6 +26,7 @@ import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 import com.kontakt.sdk.android.common.profile.IEddystoneNamespace;
 
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MySimpleArrayAdapter(this);
         lista.setAdapter(adapter);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls.get(arg2)));
                 startActivity(browserIntent);

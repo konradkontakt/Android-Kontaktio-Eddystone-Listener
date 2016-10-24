@@ -28,6 +28,8 @@
     <TextView
         android:id="@+id/firstLine"
         android:layout_width="fill_parent"
+        android:autoLink="web"
+        android:linksClickable="true"
         android:layout_height="wrap_content"
         android:layout_above="@id/secondLine"
         android:layout_alignParentRight="true"

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_2fd89681c87c8ecf4538a7e917a1685072a0c88d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.kontaktio\sdk\3.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a03a8038475580807575a3a7477472bcb48bed19">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.kontaktio-sdk-3.1.1_46c6c89d14012a36cf37afbb7fadd0f694a92514.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_1f554bd72613a7a454933d730d4f649e86d992ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_42fb31afc1e5f95c3304359fa100c2a0d72352a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.0\5c06d197fb7fa875ad452f562e3310dd9949d066\retrofit-2.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5c06d197fb7fa875ad452f562e3310dd9949d066">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\retrofit-2.0.0_ea9b72f5b1dc965eede69a725f735ce13fe3a717.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_a019412fa61c85d7dc54b5722f1cd8c5002b9ad3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_c1b275dfb8498b6d595576cbe240258a2b2ab5ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_366d326539b1d075a48d502e69ecafe2817b33c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\gson-2.6.1_72a9977e9baa780c81f29228bfaa93ebeb29ef1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_52daecda28528f68b6395a640987be23e4f20227.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\okio-1.6.0_a795317fd5af67aa70c047dd256866f24d607cc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_cd39658a34c4ec265e74e6af975768ec952b9d51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ff90ec7e9a926abdda046fb55a907c3583fe751a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_f11abd5c4638d9d35730be8d84d3c187947d2780.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_a7295b09226405393b2970eb2a51ae99920536e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0\49eb3ad545e7701234e4dd83db8dc1344b577f23\converter-gson-2.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="49eb3ad545e7701234e4dd83db8dc1344b577f23">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0_8a02ae6a62f068ae42656b2a1020ad0033f5e85f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_25c9b4907ccb01d3fd8cf1477b2aba21c61b0653.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_7d563e830e42469c59d72b51470d65f2d60ba667.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_955c95989c8df67c79bf67295d030c8214d5b85c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_10cd953c940accdea77ebb67004f63b8f836c70e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_61bab0f07b33a95e94c1b9482740d138e5d94938.jar" />
+    </item>
+
+</items>

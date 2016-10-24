@@ -63,7 +63,6 @@ public MySimpleArrayAdapter(Context context)
 
         ViewHolder holder = new ViewHolder();
         holder.url = (TextView) rowView.findViewById(R.id.firstLine);
-        holder.url.setMovementMethod(LinkMovementMethod.getInstance());
         holder.uid = (TextView) rowView.findViewById(R.id.secondLine);
         holder.icon = (ImageView) rowView.findViewById(R.id.icon);
         rowView.setTag(holder);
@@ -73,6 +72,7 @@ public MySimpleArrayAdapter(Context context)
           }
         else
         {
+            holder.url.setMovementMethod(LinkMovementMethod.getInstance());
             holder.url.setText(Html.fromHtml(urls.get(position)));
             holder.uid.setText(uids.get(position));
             holder.icon.setImageResource(R.drawable.eddystone);
