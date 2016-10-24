@@ -1,13 +1,19 @@
 package com.example.konradbujak.myapplication;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
 import com.kontakt.sdk.android.ble.configuration.scan.ScanMode;
@@ -27,6 +33,8 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     private ProximityManager KontaktioManager;
+    private static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0;
+
     private static final String TAG = "MyActivity";
     ArrayList<String> urls = new ArrayList<String>();
     ArrayList<String> uids = new ArrayList<String>();
@@ -35,6 +43,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //For devices with Android v6.0+ we need to ask for permission as it is required by Kontakt.io SDK
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)
+        {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION))
+            {
+                Log.i(TAG, "We have already permission" );
+            }
+            else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                // MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
         KontaktSDK.initialize("QcZNRdfovwLcPVFAvbHgacOnfGBkcHco");
         if (KontaktSDK.isInitialized())
             Log.v(TAG, "SDK initialised");
@@ -42,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         KontaktioManager.configuration().eddystoneFrameTypes(Collections.singleton(EddystoneFrameType.URL))
                 .scanMode(ScanMode.BALANCED)
                 .scanPeriod(ScanPeriod.RANGING);
-        //Dumping urls to the logs
+
         KontaktioManager.setEddystoneListener(new SimpleEddystoneListener()
         {
             @Override public void onEddystoneDiscovered(IEddystoneDevice eddystone, IEddystoneNamespace namespace)
@@ -51,13 +77,14 @@ public class MainActivity extends AppCompatActivity {
                 urls.add(url);
                 String uid = eddystone.getUniqueId();
                 uids.add(uid);
+                adapter.updateUrls(urls, uids);
+                //Dumping urls to the logs
                 Log.v(TAG,"URL :" + eddystone.getUrl() + " " + "Beacon UID : " + eddystone.getUniqueId());
-                //Url is first line, second lane is UID
             }
             });
         startScanning();
         ListView lista = (ListView) findViewById(R.id.CustomListView);
-        adapter = new MySimpleArrayAdapter(this, urls, uids);
+        adapter = new MySimpleArrayAdapter(this);
         lista.setAdapter(adapter);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -66,6 +93,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //startService(new Intent(getBaseContext(), Service.class));
+                    Log.i(TAG, "Permission granted" );
+                } else {
+                    // permission denied, boo!
+                    Log.i(TAG, "Permission denied" );
+                    Context context = getApplicationContext();
+                    CharSequence text = "You have to grant permission in order to use Kontakt.io Beacon Health";
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                return;
+            }
+        }
     }
     private void startScanning(){
         KontaktioManager.connect(new OnServiceReadyListener() {

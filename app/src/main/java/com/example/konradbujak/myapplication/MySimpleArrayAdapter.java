@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,10 +23,10 @@ import static android.R.attr.data;
 
 public class MySimpleArrayAdapter extends ArrayAdapter<String> {
         private final Context context;
-        private final String[] urls;
-        private final String[] uids;
-        private ArrayList uids;
-        private ArrayList urls;
+        private final ArrayList<String> urls = new ArrayList<>();
+        private final ArrayList<String> uids = new ArrayList<>();
+/*        private ArrayList uids;
+        private ArrayList urls;*/
         static class ViewHolder
         {
             TextView url;
@@ -34,18 +35,23 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
             int position;
         }
 
-public MySimpleArrayAdapter(Context context, String [] urls, String [] uids)
+public MySimpleArrayAdapter(Context context)
         {
             super(context, R.layout.array_adapter);
             this.context = context;
-            this.urls = urls;
-            this.uids = uids;
         }
+
+    public void updateUrls(ArrayList<String> newUrls, ArrayList<String> newUIDs) {
+        urls.clear();
+        uids.clear();
+        urls.addAll(newUrls);
+        uids.addAll(newUIDs);
+        notifyDataSetChanged();
+        Log.d("MyActivity", "updateUrls: " +getCount());
+    }
+
     public int getCount()
     {
-
-        if(urls.size()<=0)
-            return 1;
         return urls.size();
     }
         @Override
@@ -61,17 +67,15 @@ public MySimpleArrayAdapter(Context context, String [] urls, String [] uids)
         holder.uid = (TextView) rowView.findViewById(R.id.secondLine);
         holder.icon = (ImageView) rowView.findViewById(R.id.icon);
         rowView.setTag(holder);
-        if(urls.size()<=0)
+        if(urls.size() <=0)
           {
-
               holder.url.setText("No eddystone URLs");
-
           }
         else
         {
-            holder.url.setText(Html.fromHtml(url));
-            holder.uid.setText(uids);
-            holder.icon.setImageDrawable(Drawable.createFromPath("res/drawable/eddystones.png"));
+            holder.url.setText(Html.fromHtml(urls.get(position)));
+            holder.uid.setText(uids.get(position));
+            holder.icon.setImageResource(R.drawable.eddystone);
         }
          return rowView;
         }
