@@ -1,10 +1,12 @@
 package com.example.konradbujak.myapplication;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,11 +27,9 @@ import com.kontakt.sdk.android.common.KontaktSDK;
 import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 import com.kontakt.sdk.android.common.profile.IEddystoneNamespace;
 
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.EnumSet;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,34 +43,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate called");
+        setContentView(R.layout.activity_main);
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart called");
         //For devices with Android v6.0+ we need to ask for permission as it is required by Kontakt.io SDK
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED)
         {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION))
-            {
-                KontaktioStart();
-                Log.i(TAG, "We have already permission" );
-            }
-            else {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                Log.d(TAG, "request permission called");
                 // MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION is an
                 // app-defined int constant. The callback method gets the
                 // result of the request.
             }
-        }
-        setContentView(R.layout.activity_main);
+        getDelegate().onStart();
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String permissions[], final int[] grantResults) {
+        Log.d(TAG, "Switch - Case called");
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //startService(new Intent(getBaseContext(), Service.class));
                     Log.i(TAG, "Permission granted");
                     KontaktioStart();
                 } else {
@@ -81,14 +81,24 @@ public class MainActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                            MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        //startService(new Intent(getBaseContext(), Service.class));
-                        Log.i(TAG, "Permission granted");
-                        KontaktioStart();
-                    }
-                    return;
+                    // I will give them one more time option
+                    final CountDownTimer counter1 = new CountDownTimer(3000, 1) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                        }
+                        @Override
+                        public void onFinish() {
+                            Log.d(TAG, "Countdown Finished");
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                    MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                                Log.i(TAG, "Permission granted");
+                                KontaktioStart();
+                            }
+                        }
+                    };
+                    counter1.start();
+                     return;
                 }
             }
         }
@@ -98,10 +108,9 @@ public class MainActivity extends AppCompatActivity {
         if (KontaktSDK.isInitialized())
             Log.v(TAG, "SDK initialised");
         KontaktioManager = new ProximityManager(this);
-        KontaktioManager.configuration().eddystoneFrameTypes(Collections.singleton(EddystoneFrameType.URL))
+        KontaktioManager.configuration().eddystoneFrameTypes(EnumSet.of(EddystoneFrameType.URL))
                 .scanMode(ScanMode.BALANCED)
                 .scanPeriod(ScanPeriod.RANGING);
-
         KontaktioManager.setEddystoneListener(new SimpleEddystoneListener()
         {
             @Override public void onEddystoneDiscovered(IEddystoneDevice eddystone, IEddystoneNamespace namespace)
@@ -132,8 +141,8 @@ public class MainActivity extends AppCompatActivity {
             public void onServiceReady() {
                 KontaktioManager.startScanning();
                 if (KontaktioManager.isScanning())
-                    Log.i(TAG, "Scan started");
-            }
+                    Log.d(TAG, "Scan Started");
+                }
         });
     }
 }
