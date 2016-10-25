@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         //For devices with Android v6.0+ we need to ask for permission as it is required by Kontakt.io SDK
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION))
             {
+                KontaktioStart();
                 Log.i(TAG, "We have already permission" );
             }
             else {
@@ -62,6 +62,38 @@ public class MainActivity extends AppCompatActivity {
                 // result of the request.
             }
         }
+        setContentView(R.layout.activity_main);
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //startService(new Intent(getBaseContext(), Service.class));
+                    Log.i(TAG, "Permission granted");
+                    KontaktioStart();
+                } else {
+                    // permission denied, boo!
+                    Log.i(TAG, "Permission denied");
+                    Context context = getApplicationContext();
+                    CharSequence text = "You have to grant permission in order to use Kontakt.io Beacon Health";
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                            MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        //startService(new Intent(getBaseContext(), Service.class));
+                        Log.i(TAG, "Permission granted");
+                        KontaktioStart();
+                    }
+                    return;
+                }
+            }
+        }
+    }
+    public void KontaktioStart() {
         KontaktSDK.initialize("QcZNRdfovwLcPVFAvbHgacOnfGBkcHco");
         if (KontaktSDK.isInitialized())
             Log.v(TAG, "SDK initialised");
@@ -82,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 //Dumping urls to the logs
                 Log.v(TAG,"URL :" + eddystone.getUrl() + " " + "Beacon UID : " + eddystone.getUniqueId());
             }
-            });
+        });
         startScanning();
         ListView lista = (ListView) findViewById(R.id.CustomListView);
         adapter = new MySimpleArrayAdapter(this);
@@ -93,28 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //startService(new Intent(getBaseContext(), Service.class));
-                    Log.i(TAG, "Permission granted" );
-                } else {
-                    // permission denied, boo!
-                    Log.i(TAG, "Permission denied" );
-                    Context context = getApplicationContext();
-                    CharSequence text = "You have to grant permission in order to use Kontakt.io Beacon Health";
-                    int duration = Toast.LENGTH_LONG;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-                return;
-            }
-        }
     }
     private void startScanning(){
         KontaktioManager.connect(new OnServiceReadyListener() {
