@@ -1,7 +1,6 @@
 package com.example.konradbujak.myapplication;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -53,6 +52,18 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         Log.d(TAG, "onStart called");
         checkPermissionAndStart();
+    }
+    @Override
+    protected void onStop() {
+        KontaktioManager.stopScanning();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        KontaktioManager.disconnect();
+        KontaktioManager = null;
+        super.onDestroy();
     }
     private void checkPermissionAndStart() {
         int checkSelfPermissionResult = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
