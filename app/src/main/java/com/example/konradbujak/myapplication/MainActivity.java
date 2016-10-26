@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
 import com.kontakt.sdk.android.ble.configuration.scan.ScanMode;
 import com.kontakt.sdk.android.ble.connection.OnServiceReadyListener;
+
 import com.kontakt.sdk.android.ble.manager.ProximityManager;
 import com.kontakt.sdk.android.ble.manager.listeners.simple.SimpleEddystoneListener;
 import com.kontakt.sdk.android.ble.spec.EddystoneFrameType;
@@ -28,7 +30,6 @@ import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 import com.kontakt.sdk.android.common.profile.IEddystoneNamespace;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumSet;
 
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_main);
     }
@@ -50,39 +52,42 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart called");
-        //For devices with Android v6.0+ we need to ask for permission as it is required by Kontakt.io SDK
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED)
+        checkPermissionAndStart();
+    }
+    private void checkPermissionAndStart() {
+        int checkSelfPermissionResult = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        if (PackageManager.PERMISSION_GRANTED == checkSelfPermissionResult) {
+            //already granted
+            Log.d(TAG, "Permission already granted");
+            KontaktioStart();
+        } else
         {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-                Log.d(TAG, "request permission called");
-                // MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        getDelegate().onStart();
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            Log.d(TAG, "request permission called");
+        }
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], final int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull final int[] grantResults) {
         Log.d(TAG, "Switch - Case called");
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
                     Log.i(TAG, "Permission granted");
                     KontaktioStart();
-                } else {
-                    // permission denied, boo!
+                } else
+                {
                     Log.i(TAG, "Permission denied");
+                    //Display toast
                     Context context = getApplicationContext();
                     CharSequence text = "You have to grant permission in order to use Kontakt.io Beacon Health";
                     int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    // I will give them one more time option
-                    final CountDownTimer counter1 = new CountDownTimer(3000, 1) {
+                    // I will give them one more time option after 3 seconds
+                    final CountDownTimer counter1 = new CountDownTimer(3000, 1)
+                    {
                         @Override
                         public void onTick(long millisUntilFinished) {
                         }
@@ -98,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     };
                     counter1.start();
-                     return;
                 }
             }
         }
