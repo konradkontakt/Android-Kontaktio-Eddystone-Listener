@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void KontaktioStart() {
-        KontaktSDK.initialize("QcZNRdfovwLcPVFAvbHgacOnfGBkcHco");
+        KontaktSDK.initialize("Put your secret API Key here");
         if (KontaktSDK.isInitialized())
             Log.v(TAG, "SDK initialised");
         KontaktioManager = new ProximityManager(this);
