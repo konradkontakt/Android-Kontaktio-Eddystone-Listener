@@ -23,7 +23,8 @@ import static android.R.attr.data;
 
 public class MySimpleArrayAdapter extends ArrayAdapter<String> {
         private final Context context;
-        private final ArrayList<String> urls = new ArrayList<>();
+    private static final String TAG = "XYZ";
+    private final ArrayList<String> urls = new ArrayList<>();
         private final ArrayList<String> uids = new ArrayList<>();
 /*        private ArrayList uids;
         private ArrayList urls;*/
@@ -47,7 +48,7 @@ public MySimpleArrayAdapter(Context context)
         urls.addAll(newUrls);
         uids.addAll(newUIDs);
         notifyDataSetChanged();
-        Log.d("MyActivity", "updateUrls: " +getCount());
+        Log.d(TAG, "updateUrls: " +getCount());
     }
 
     public int getCount()
