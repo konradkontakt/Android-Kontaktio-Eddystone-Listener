@@ -18,10 +18,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.kontakt.sdk.android.ble.configuration.ActivityCheckConfiguration;
+import com.kontakt.sdk.android.ble.configuration.ScanMode;
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
-import com.kontakt.sdk.android.ble.configuration.scan.ScanMode;
 import com.kontakt.sdk.android.ble.connection.OnServiceReadyListener;
 import com.kontakt.sdk.android.ble.manager.ProximityManager;
+import com.kontakt.sdk.android.ble.manager.ProximityManagerFactory;
 import com.kontakt.sdk.android.ble.manager.listeners.ScanStatusListener;
 import com.kontakt.sdk.android.ble.manager.listeners.simple.SimpleEddystoneListener;
 import com.kontakt.sdk.android.ble.manager.listeners.simple.SimpleScanStatusListener;
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             Log.v(TAG, "SDK initialised");
     }
     private void configureProximityManager() {
-        KontaktioManager = new ProximityManager(this);
+        KontaktioManager = ProximityManagerFactory.create(this);
         KontaktioManager.configuration()
                 .rssiCalculator(RssiCalculators.newLimitedMeanRssiCalculator(5))
                 .resolveShuffledInterval(3)

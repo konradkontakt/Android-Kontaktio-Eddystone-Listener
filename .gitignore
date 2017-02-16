@@ -1,9 +1,13 @@
 *.iml
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+local.properties
+gradle.properties
 .DS_Store
-/build
+.idea
+build
 /captures
 .externalNativeBuild
+
+# Windows clutter
+Thumbs.db
+app/libs/
