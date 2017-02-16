@@ -12,21 +12,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.kontaktio\sdk\3.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a03a8038475580807575a3a7477472bcb48bed19">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.kontaktio-sdk-3.1.1_46c6c89d14012a36cf37afbb7fadd0f694a92514.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
         <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_1f554bd72613a7a454933d730d4f649e86d992ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_cd39658a34c4ec265e74e6af975768ec952b9d51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ff90ec7e9a926abdda046fb55a907c3583fe751a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -45,6 +54,33 @@
         revision="24.0.3"
         sha1="5c06d197fb7fa875ad452f562e3310dd9949d066">
         <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\retrofit-2.0.0_ea9b72f5b1dc965eede69a725f735ce13fe3a717.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_f11abd5c4638d9d35730be8d84d3c187947d2780.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_a7295b09226405393b2970eb2a51ae99920536e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0\49eb3ad545e7701234e4dd83db8dc1344b577f23\converter-gson-2.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="49eb3ad545e7701234e4dd83db8dc1344b577f23">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0_8a02ae6a62f068ae42656b2a1020ad0033f5e85f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,60 +129,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\okio-1.6.0_a795317fd5af67aa70c047dd256866f24d607cc5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_cd39658a34c4ec265e74e6af975768ec952b9d51.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ff90ec7e9a926abdda046fb55a907c3583fe751a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_f11abd5c4638d9d35730be8d84d3c187947d2780.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_a7295b09226405393b2970eb2a51ae99920536e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0\49eb3ad545e7701234e4dd83db8dc1344b577f23\converter-gson-2.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.3"
-        sha1="49eb3ad545e7701234e4dd83db8dc1344b577f23">
-        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0_8a02ae6a62f068ae42656b2a1020ad0033f5e85f.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -162,6 +144,24 @@
         revision="24.0.3"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_7d563e830e42469c59d72b51470d65f2d60ba667.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\okio-1.6.0_a795317fd5af67aa70c047dd256866f24d607cc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\exploded-aar\com.kontaktio\sdk\3.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2b9d649c69f2d04adc1d8ac734a736b51316d97c">
+        <dex dex="C:\Users\Konrad.Bujak\Documents\AndroidStudioProjects\EddystoneListener\app\build\intermediates\pre-dexed\debug\com.kontaktio-sdk-3.2.0_e159677abf41e323f5bb71099843a3f49510b9c4.jar" />
     </item>
     <item
         is-multidex="false"
